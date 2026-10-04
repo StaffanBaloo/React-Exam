@@ -1,6 +1,7 @@
 import { NavLink } from "react-router-dom";
 import { type User } from "../../types.ts";
 const UserListItem = ({ user }: { user: User }) => {
+	// Render a list of users as navigation links, highlighting the active user with a different style.
 	return (
 		<NavLink
 			to={`/users/${user.id}`}

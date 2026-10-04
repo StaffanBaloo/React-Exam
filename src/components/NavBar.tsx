@@ -7,7 +7,7 @@ const NavBar = () => {
 		{ name: "Om", icon: Info, path: "/about" },
 		{ name: "Användare", icon: Users, path: "/users" },
 	];
-
+	//Render a navbar with navigation links that are icons on small screens and text on larger screens
 	return (
 		<nav className="bg-gray-800 text-white p-4 border-b-2 border-black p-4 rounded-3xl shadow-md">
 			<ul className="flex justify-between">
@@ -19,7 +19,7 @@ const NavBar = () => {
 						<span className="md:hidden ">
 							<item.icon />
 						</span>
-						<span className="hidden md:inline">{item.name}</span>
+						<span className="hidden md:inline text-lg">{item.name}</span>
 					</NavLink>
 				))}
 			</ul>

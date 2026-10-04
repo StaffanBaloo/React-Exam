@@ -15,17 +15,32 @@ const MainPage = () => {
 			);
 			if (!response.ok) {
 				switch (response.status) {
+					// Handle specific HTTP status codes
 					case 404:
 						throw new Error("Resource not found");
 					case 401:
 						throw new Error("Unauthorized access");
+					case 403:
+						throw new Error("Forbidden access");
+					case 418:
+						throw new Error("Server is a teapot");
+					case 429:
+						throw new Error("Too many requests");
 					case 500:
 						throw new Error("Internal server error");
+					case 502:
+						throw new Error("Bad gateway");
+					case 503:
+						throw new Error("Service unavailable");
 					default:
 						throw new Error(`Unexpected error: ${response.status}`);
 				}
 			}
 			const data = await response.json();
+			// Check if the data is empty and throw an error if it is
+			if (data.length === 0) {
+				throw new Error("No users found");
+			}
 			// Sort the data by name in ascending order
 			data.sort(
 				(
@@ -50,6 +65,7 @@ const MainPage = () => {
 		staleTime: 1000 * 60 * 30, // 30 minutes
 	});
 
+	//Display a spinner while the data is loading
 	if (isLoading) {
 		return <Spinner />;
 	}
