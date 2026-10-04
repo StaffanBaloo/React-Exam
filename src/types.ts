@@ -13,6 +13,4 @@ export interface User {
 	};
 }
 
-export interface UserList {
-	users: User[];
-}
+export type UserList = User[];

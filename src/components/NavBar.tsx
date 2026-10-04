@@ -1,3 +1,5 @@
+import { Link, NavLink } from "react-router-dom";
+
 const NavBar = () => {
 	const navItems = [
 		{ name: "Home", path: "/" },
@@ -10,7 +12,7 @@ const NavBar = () => {
 			<ul className="flex space-x-4">
 				{navItems.map((item, index) => (
 					<li key={index}>
-						<a href={item.path}>{item.name}</a>
+						<NavLink to={item.path}>{item.name}</NavLink>
 					</li>
 				))}
 			</ul>
