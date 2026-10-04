@@ -1,8 +1,9 @@
 const HomePage = () => {
-    return (
-    <>
-        <h1>Welcome to the Home Page</h1>
-        <p>This is the home page content.</p>
-    </>)
-}
+	return (
+		<>
+			<h1>Välkommen till hemsidan</h1>
+			<p>Detta är innehållet på hemsidan.</p>
+		</>
+	);
+};
 export default HomePage;

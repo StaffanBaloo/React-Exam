@@ -7,10 +7,10 @@ export interface User {
 		address: {
 			street: string;
 			city: string;
-			zipcode: string;
+			zipCode: string;
 		};
-		roles: string[];
 	};
+	roles: string[];
 }
 
 export type UserList = User[];

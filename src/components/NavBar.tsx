@@ -1,15 +1,15 @@
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 const NavBar = () => {
 	const navItems = [
-		{ name: "Home", path: "/" },
-		{ name: "About", path: "/about" },
-		{ name: "Users", path: "/users" },
+		{ name: "Hem", path: "/" },
+		{ name: "Om", path: "/about" },
+		{ name: "Användare", path: "/users" },
 	];
 
 	return (
-		<nav className="bg-gray-800 text-white p-4 border-b-2 border-black p-4 rounded-lg shadow-md">
-			<ul className="flex space-x-4">
+		<nav className="bg-gray-800 text-white p-4 border-b-2 border-black p-4 rounded-3xl shadow-md">
+			<ul className="flex space-x-4 justify-between">
 				{navItems.map((item, index) => (
 					<li key={index}>
 						<NavLink to={item.path}>{item.name}</NavLink>

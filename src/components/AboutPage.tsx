@@ -1,8 +1,8 @@
 const AboutPage = () => {
 	return (
 		<div>
-			<h1>About Us</h1>
-			<p>This is the about page.</p>
+			<h1>Om sidan</h1>
+			<p>Den här sidan är en inlämningsuppgift i en React-kurs.</p>
 		</div>
 	);
 };

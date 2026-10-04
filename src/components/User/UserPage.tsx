@@ -9,8 +9,8 @@ const UserPage = ({ userList }: { userList: UserList }) => {
 		userId !== null ? userList.find((user) => user.id === userId) : null;
 	return (
 		<div className="flex flex-row align-start justify-content gap-4">
-			<div className="bg-teal-700 basis-1/4 border-r-2 border-black p-4 rounded-lg shadow-md">
-				<h2 className="text-lg font-bold mb-2">User List</h2>
+			<div className="bg-teal-700 basis-1/4 border-r-2 border-black p-4 rounded-3xl shadow-md">
+				<h2 className="text-lg font-bold mb-2">Användarlista</h2>
 				<ul>
 					{userList.map((user) => (
 						<UserListItem key={user.id} user={user} />
@@ -21,7 +21,7 @@ const UserPage = ({ userList }: { userList: UserList }) => {
 				{selectedUser ? (
 					<UserDetailsItem user={selectedUser} />
 				) : (
-					<p>Select a user to view details</p>
+					<p>Välj en användare för att visa detaljer.</p>
 				)}
 			</div>
 		</div>
