@@ -24,7 +24,7 @@ const UserPage = ({ userList }: { userList: UserList }) => {
 				) : selectedUser === null ? (
 					<p>Vänligen välj en användare från listan.</p>
 				) : (
-					<UserDetailsItem user={selectedUser} />
+					<UserDetailsItem key={selectedUser.id} user={selectedUser} />
 				)}
 			</div>
 		</div>

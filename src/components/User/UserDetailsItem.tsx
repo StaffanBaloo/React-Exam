@@ -1,6 +1,5 @@
 import { type User } from "../../types.ts";
 const UserDetailsItem = ({ user }: { user: User }) => {
-	console.log("UserDetailsItem user:", user);
 	return (
 		<>
 			<h3 className="text-lg font-bold mb-2">{user.profile.name}</h3>
