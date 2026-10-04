@@ -19,10 +19,12 @@ const UserPage = ({ userList }: { userList: UserList }) => {
 				</ul>
 			</div>
 			<div className="bg-sky-700 basis-3/4 border-r-2 border-black p-4 rounded-lg shadow-md ">
-				{selectedUser ? (
-					<UserDetailsItem user={selectedUser} />
+				{selectedUser === undefined ? (
+					<p>Användare inte hittad. Vänligen välj en användare från listan.</p>
+				) : selectedUser === null ? (
+					<p>Vänligen välj en användare från listan.</p>
 				) : (
-					<p>Välj en användare för att visa detaljer.</p>
+					<UserDetailsItem user={selectedUser} />
 				)}
 			</div>
 		</div>
