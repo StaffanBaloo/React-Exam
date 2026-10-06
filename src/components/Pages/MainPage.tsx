@@ -9,49 +9,44 @@ import Spinner from "../UI/Spinner.tsx";
 const MainPage = () => {
 	const fetchData = async () => {
 		try {
-			const response = await fetch(
-				"https://api-userapi.onrender.com/api/users/getUsers",
-				{ method: "GET", headers: { "x-api-key": "elev-hemlighet-2026" } },
-			);
+			const response = await fetch("https://api-userapi.onrender.com/api/users/getUsers", {
+				method: "GET",
+				headers: { "x-api-key": "elev-hemlighet-2026" },
+			});
 			if (!response.ok) {
 				switch (response.status) {
 					// Handle specific HTTP status codes
 					case 404:
-						throw new Error("Resource not found");
+						throw new Error("Hittar inte användarlistan");
 					case 401:
-						throw new Error("Unauthorized access");
+						throw new Error("Ej auktoriserad åtkomst");
 					case 403:
-						throw new Error("Forbidden access");
+						throw new Error("Förbjuden åtkomst");
 					case 418:
-						throw new Error("Server is a teapot");
+						throw new Error("Servern är en teakopp");
 					case 429:
-						throw new Error("Too many requests");
+						throw new Error("För många förfrågningar");
 					case 500:
-						throw new Error("Internal server error");
+						throw new Error("Internt serverfel");
 					case 502:
-						throw new Error("Bad gateway");
+						throw new Error("Dålig gateway");
 					case 503:
-						throw new Error("Service unavailable");
+						throw new Error("Tjänsten är otillgänglig");
 					default:
-						throw new Error(`Unexpected error: ${response.status}`);
+						throw new Error(`Oväntat fel: ${response.status}`);
 				}
 			}
 			const data = await response.json();
 			// Check if the data is empty and throw an error if it is
 			if (data.length === 0) {
-				throw new Error("No users found");
+				throw new Error("Inga användare hittades");
 			}
 			// Sort the data by name in ascending order
-			data.sort(
-				(
-					a: { profile: { name: string } },
-					b: { profile: { name: string } },
-				) => {
-					const nameA = a.profile.name.toUpperCase();
-					const nameB = b.profile.name.toUpperCase();
-					return nameA.localeCompare(nameB);
-				},
-			);
+			data.sort((a: { profile: { name: string } }, b: { profile: { name: string } }) => {
+				const nameA = a.profile.name.toUpperCase();
+				const nameB = b.profile.name.toUpperCase();
+				return nameA.localeCompare(nameB);
+			});
 			return data;
 		} catch (error) {
 			console.error("Error fetching user data:", error);
