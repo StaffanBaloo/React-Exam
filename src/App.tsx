@@ -1,4 +1,4 @@
-import ParentPage from "./components/ParentPage";
+import ParentPage from "./components/Structure/ParentPage";
 
 function App() {
 	return (

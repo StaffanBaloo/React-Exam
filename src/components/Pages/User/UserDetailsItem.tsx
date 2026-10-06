@@ -1,4 +1,4 @@
-import { type User } from "../../types.ts";
+import { type User } from "../../../types.ts";
 const UserDetailsItem = ({ user }: { user: User }) => {
 	return (
 		<>

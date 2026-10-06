@@ -1,10 +1,10 @@
-import { type UserList } from "../types.ts";
+import { type UserList } from "../../types.ts";
 import { Route, Routes } from "react-router-dom";
 import HomePage from "./HomePage";
-import AboutPage from "./AboutPage";
-import UserPage from "./User/UserPage";
+import AboutPage from "./AboutPage.tsx";
+import UserPage from "./User/UserPage.tsx";
 import { useQuery } from "@tanstack/react-query";
-import Spinner from "./UI/Spinner.tsx";
+import Spinner from "../UI/Spinner.tsx";
 
 const MainPage = () => {
 	const fetchData = async () => {

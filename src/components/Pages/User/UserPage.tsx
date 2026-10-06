@@ -1,4 +1,4 @@
-import { type UserList } from "../../types";
+import { type UserList } from "../../../types";
 import UserDetailsItem from "./UserDetailsItem";
 import UserListItem from "./UserListItem";
 import { useParams } from "react-router-dom";
