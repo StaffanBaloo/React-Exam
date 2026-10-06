@@ -50,10 +50,16 @@ const MainPage = () => {
 			return data;
 		} catch (error) {
 			console.error("Error fetching user data:", error);
+			throw error; // Rethrow the error to be caught by useQuery
 		}
 	};
 
-	const { data: userList, isLoading } = useQuery<UserList>({
+	const {
+		data: userList,
+		isLoading,
+		isError,
+		error,
+	} = useQuery<UserList>({
 		queryKey: ["users"],
 		queryFn: fetchData,
 		gcTime: 1000 * 60 * 60, // 30 minutes
@@ -63,6 +69,18 @@ const MainPage = () => {
 	//Display a spinner while the data is loading
 	if (isLoading) {
 		return <Spinner />;
+	}
+
+	if (isError) {
+		return (
+			<div
+				className="bg-indigo-800 text-white p-4 border-b-2 border-black p-4 rounded-3xl shadow-md"
+				role="alert">
+				<strong className="font-bold">Oops!</strong>
+				<span className="block sm:inline">Ett fel uppstod vid hämtning av användardata.</span>
+				<pre className="text-sm">{error.message}</pre>
+			</div>
+		);
 	}
 
 	return (
