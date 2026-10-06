@@ -76,9 +76,18 @@ const MainPage = () => {
 			<div
 				className="bg-indigo-800 text-white p-4 border-b-2 border-black p-4 rounded-3xl shadow-md"
 				role="alert">
-				<strong className="font-bold">Oops!</strong>
-				<span className="block sm:inline">Ett fel uppstod vid hämtning av användardata.</span>
-				<pre className="text-sm">{error.message}</pre>
+				<p>
+					<strong className="font-bold">Oops!</strong>
+				</p>
+				<p className="sm:inline">Ett fel uppstod vid hämtning av användardata.</p>
+				<p>
+					<pre className="text-sm">{error.message}</pre>
+				</p>
+				<button
+					onClick={() => window.location.reload()}
+					className="bg-purple-500 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded">
+					Försök igen.
+				</button>
 			</div>
 		);
 	}
