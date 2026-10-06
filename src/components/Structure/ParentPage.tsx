@@ -8,7 +8,7 @@ const ParentPage = () => {
 	return (
 		<>
 			<div className="md:basis-1/6"></div>
-			<div className="bg-gray-300 min-h-screen flex flex-col md:basis-4/6 gap-4">
+			<div className="bg-gray-300 min-h-screen w-full md:flex md:flex-col md:basis-4/6 gap-4">
 				<BrowserRouter>
 					<HeaderComponent />
 					<NavBar />
