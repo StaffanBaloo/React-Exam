@@ -62,7 +62,7 @@ const MainPage = () => {
 	} = useQuery<UserList>({
 		queryKey: ["users"],
 		queryFn: fetchData,
-		gcTime: 1000 * 60 * 60, // 30 minutes
+		gcTime: 1000 * 60 * 60, // 60 minutes
 		staleTime: 1000 * 60 * 30, // 30 minutes
 	});
 
